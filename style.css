@@ -39,7 +39,7 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; /* Bagi ruang vertikal merata */
+  justify-content: space-evenly;
   align-items: center;
   padding: 8px 0;
 }
@@ -50,6 +50,24 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Delay animasi masuk per blok */
+.app-block:nth-child(1) { animation-delay: 0.2s; }
+.app-block:nth-child(2) { animation-delay: 0.4s; }
+.app-block:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Kartu logo */
@@ -102,10 +120,24 @@ html, body {
 
 /* Deskripsi bawah kartu */
 .desc {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
   color: #fff;
   text-align: center;
-  margin-top: 4px;
+  margin-top: 6px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-height: 700px) {
+  .main-logo {
+    max-width: 120px;
+  }
+  .app-card {
+    width: 60vw;
+  }
+  .desc {
+    font-size: 13px;
+  }
 }
 
 /* Responsif landscape */
