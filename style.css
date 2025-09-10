@@ -1,8 +1,7 @@
-/* Header modern putih */
 header {
   width: 100%;
   background-color: #ffffff;
-  padding: 12px 0; /* lebih kecil biar hemat ruang */
+  padding: 12px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,11 +13,10 @@ header {
   height: auto;
 }
 
-/* Fullscreen layout & background */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #004aad, #7b2ff7, #ff4ecd);
@@ -26,7 +24,7 @@ html, body {
   animation: gradientBG 12s ease infinite;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr; /* header + konten */
+  grid-template-rows: auto 1fr;
 }
 
 @keyframes gradientBG {
@@ -35,15 +33,13 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Container isi dibagi rata layar */
 .app-container {
   display: grid;
-  grid-template-rows: repeat(3, 1fr); /* 3 blok sama tinggi */
+  grid-template-rows: repeat(3, 1fr);
   height: 100%;
   width: 100%;
 }
 
-/* Blok aplikasi */
 .app-block {
   display: flex;
   flex-direction: column;
@@ -51,7 +47,6 @@ html, body {
   justify-content: center;
 }
 
-/* Kotak persegi */
 .app-card {
   width: 55%;
   aspect-ratio: 1 / 1;
@@ -64,6 +59,8 @@ html, body {
   cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease;
   overflow: hidden;
+  touch-action: manipulation;
+  animation: fadeIn 0.6s ease;
 }
 
 .app-card:hover {
@@ -71,7 +68,11 @@ html, body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Logo wrapper */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .logo-wrapper {
   width: 80%;
   height: 80%;
@@ -86,9 +87,18 @@ html, body {
   object-fit: contain;
   display: block;
   padding: 8px;
+  transition: transform 0.2s ease;
 }
 
-/* Deskripsi */
+.logo-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+.logo-wrapper img[alt="AXISNET"] {
+  width: 90%;
+  min-height: 60px;
+}
+
 .desc {
   font-size: 13px;
   color: #fff;
@@ -96,7 +106,6 @@ html, body {
   margin-top: 6px;
 }
 
-/* Responsif HP kecil */
 @media (max-height: 700px) {
   .main-logo {
     max-width: 120px;
@@ -106,5 +115,11 @@ html, body {
   }
   .desc {
     font-size: 12px;
+  }
+}
+
+@media (orientation: landscape) {
+  .app-card {
+    width: 40%;
   }
 }
