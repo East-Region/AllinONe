@@ -1,3 +1,4 @@
+/* Header logo XLSMART */
 header {
   width: 100%;
   background-color: #ffffff;
@@ -13,6 +14,7 @@ header {
   height: auto;
 }
 
+/* Global layout & background */
 html, body {
   margin: 0;
   padding: 0;
@@ -23,8 +25,8 @@ html, body {
   background-size: 400% 400%;
   animation: gradientBG 12s ease infinite;
   overflow: hidden;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes gradientBG {
@@ -33,22 +35,29 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
+/* Kontainer utama scrollable */
 .app-container {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  height: 100%;
-  width: 100%;
-  padding-top: 32px; /* Tambahan jarak dari header */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  overflow-y: auto;
+  height: calc(100dvh - 60px); /* sisakan ruang untuk header */
 }
 
+/* Blok per provider */
 .app-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px; /* Jarak antar blok */
+  margin-bottom: 20px;
 }
 
+/* Kartu logo */
 .app-card {
   width: 55%;
   aspect-ratio: 1 / 1;
@@ -75,6 +84,7 @@ html, body {
   to { opacity: 1; transform: scale(1); }
 }
 
+/* Logo wrapper */
 .logo-wrapper {
   width: 80%;
   height: 80%;
@@ -101,6 +111,7 @@ html, body {
   min-height: 60px;
 }
 
+/* Deskripsi bawah kartu */
 .desc {
   font-size: 13px;
   color: #fff;
@@ -108,6 +119,7 @@ html, body {
   margin-top: 6px;
 }
 
+/* Responsif untuk layar kecil */
 @media (max-height: 700px) {
   .main-logo {
     max-width: 120px;
@@ -120,6 +132,7 @@ html, body {
   }
 }
 
+/* Responsif landscape */
 @media (orientation: landscape) {
   .app-card {
     width: 40%;
