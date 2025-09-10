@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script aktif");
   document.querySelectorAll(".app-card").forEach(card => {
     card.addEventListener("click", () => {
       const app = card.getAttribute("data-app");
