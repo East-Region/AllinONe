@@ -38,6 +38,7 @@ html, body {
   grid-template-rows: repeat(3, 1fr);
   height: 100%;
   width: 100%;
+  padding-top: 16px; /* Tambahan jarak dari header */
 }
 
 .app-block {
