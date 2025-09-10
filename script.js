@@ -26,19 +26,22 @@ function openApp(app, platform) {
       ios: "https://apps.apple.com/id/app/myxl-cek-kuota-beli-paket-xl/id683141076"
     },
     axisnet: {
-      android: "https://play.google.com/store/apps/details?id=com.axis.net",
-      ios: "https://apps.apple.com/id/app/axisnet/id1473123824"
+      android: "https://play.google.com/store/apps/details?id=com.axis.net&hl=id",
+      ios: "https://apps.apple.com/id/app/axisnet/id497146073?l=id"
     },
     mysf: {
       android: "https://play.google.com/store/apps/details?id=com.smartfren&hl=id",
-      ios: "https://apps.apple.com/id/app/my-smartfren/id1477797633"
+      ios: "https://apps.apple.com/id/app/mysmartfren/id1209898190"
     }
   };
 
   const url = appUrls[app]?.[platform];
 
   if (url) {
-    window.open(url, "_blank");
+    const opened = window.open(url, "_blank");
+    if (!opened) {
+      alert("Silakan izinkan pop-up atau klik tautan ini: " + url);
+    }
   } else {
     alert("Maaf, perangkat atau aplikasi tidak dikenali.");
   }
