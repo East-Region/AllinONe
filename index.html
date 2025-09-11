@@ -60,13 +60,13 @@
       let url = '';
 
       if (/android/i.test(userAgent)) {
-        if (provider === 'xl') url = 'https://play.google.com/store/apps/details?id=com.apps.myxl';
-        if (provider === 'axis') url = 'https://play.google.com/store/apps/details?id=com.axis.mobile';
-        if (provider === 'smartfren') url = 'https://play.google.com/store/apps/details?id=com.smartfren.selfcare';
+        if (provider === 'xl') url = 'https://play.google.com/store/apps/details?id=com.apps.MyXL&hl=id';
+        if (provider === 'axis') url = 'https://play.google.com/store/apps/details?id=com.axis.net&hl=id';
+        if (provider === 'smartfren') url = 'https://play.google.com/store/apps/details?id=com.smartfren&hl=id';
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        if (provider === 'xl') url = 'https://apps.apple.com/id/app/myxl/id1118893772';
-        if (provider === 'axis') url = 'https://apps.apple.com/id/app/axisnet/id1034966341';
-        if (provider === 'smartfren') url = 'https://apps.apple.com/id/app/mysmartfren/id1047903544';
+        if (provider === 'xl') url = 'https://apps.apple.com/id/app/myxl-cek-kuota-beli-paket-xl/id683141076';
+        if (provider === 'axis') url = 'https://apps.apple.com/id/app/axisnet/id497146073';
+        if (provider === 'smartfren') url = 'https://apps.apple.com/id/app/mysmartfren/id1209898190';
       } else {
         url = 'https://xl.co.id'; // fallback untuk desktop
       }
