@@ -35,28 +35,30 @@ html, body {
   100% { background-position: 0% 50%; }
 }
 
-/* Logo dekoratif transparan */
-.floating-logo {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 80px;
+/* Intro logo EAST REGION */
+.intro-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
   opacity: 0;
-  animation: fadeLoop 4s ease-in-out infinite;
-  z-index: 1;
+  animation: introFade 2s ease-in-out forwards;
+  z-index: 10;
 }
 
-.floating-logo img {
+.intro-logo img {
   width: 100%;
   height: auto;
   object-fit: contain;
   pointer-events: none;
 }
 
-@keyframes fadeLoop {
-  0% { opacity: 0; }
-  50% { opacity: 0.4; }
-  100% { opacity: 0; }
+@keyframes introFade {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.1); }
 }
 
 /* Kontainer utama */
@@ -79,9 +81,9 @@ html, body {
   opacity: 0;
 }
 
-.app-block:nth-child(1) { animation-delay: 0.2s; }
-.app-block:nth-child(2) { animation-delay: 0.4s; }
-.app-block:nth-child(3) { animation-delay: 0.6s; }
+.app-block:nth-child(1) { animation-delay: 2.2s; }
+.app-block:nth-child(2) { animation-delay: 2.4s; }
+.app-block:nth-child(3) { animation-delay: 2.6s; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
