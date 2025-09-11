@@ -60,17 +60,20 @@ header {
 .main-logo {
   max-width: 160px;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Layout konten utama */
 .app-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  padding: 8px 0 16px;
-  min-height: 100vh;
+  margin-top: 12px;
+  padding-bottom: 16px;
+  min-height: calc(100vh - 60px);
   box-sizing: border-box;
   overflow-y: auto;
 }
@@ -83,10 +86,6 @@ header {
   justify-content: center;
   animation: fadeUp 0.4s ease forwards;
   opacity: 0;
-}
-
-.app-block:first-child {
-  margin-top: 4px;
 }
 
 @keyframes fadeUp {
@@ -182,4 +181,6 @@ header {
 @media (orientation: landscape) {
   .app-card {
     width: 30vw;
-    max-width: 160
+    max-width: 160px;
+  }
+}
