@@ -31,7 +31,7 @@ body {
 }
 
 .splash-screen img {
-  width: 180px;
+  width: 200px;
   height: auto;
   animation: fadeIn 0.6s ease forwards;
   animation-delay: 0.2s;
@@ -40,17 +40,6 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 480px) {
-  .splash-screen img {
-    width: 140px;
-  }
-
-  .logo-wrapper img[alt="AXISNET"] {
-    min-height: 60px;
-  }
 }
 
 /* Konten utama */
@@ -91,6 +80,17 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.app-block:nth-child(1) { animation-delay: 2.2s; }
+.app-block:nth-child(2) { animation-delay: 2.4s; }
+.app-block:nth-child(3) { animation-delay: 2.6s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Kartu logo */
@@ -144,6 +144,29 @@ header {
   color: #fff;
   text-align: center;
   margin-top: 6px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+  .splash-screen img {
+    width: 160px;
+  }
+
+  .main-logo {
+    max-width: 120px;
+  }
+
+  .app-card {
+    width: 60vw;
+  }
+
+  .desc {
+    font-size: 13px;
+  }
+
+  .logo-wrapper img[alt="AXISNET"] {
+    min-height: 60px;
+  }
 }
 
 /* Responsif landscape */
