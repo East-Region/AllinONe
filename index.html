@@ -2,56 +2,59 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XLSMART</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.png" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="description" content="Landing page interaktif untuk pengguna XL, AXIS, dan Smartfren">
 </head>
 <body>
 
-  <!-- Intro logo EAST REGION -->
-  <div class="intro-logo">
-    <img src="https://i.imgur.com/M3F2Tky.png" alt="EAST REGION">
+  <!-- Splash screen -->
+  <div class="splash-screen">
+    <img src="https://i.imgur.com/M3F2Tky.png" alt="EAST REGION" />
   </div>
 
-  <!-- Header XLSMART -->
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/XLSmart.png" alt="XLSMART" class="main-logo" />
-  </header>
-
   <!-- Konten utama -->
-  <main class="app-container">
-    <div class="app-block">
-      <div class="app-card" data-app="myxl">
-        <div class="logo-wrapper">
-          <img src="https://d17e22l2uh4h4n.cloudfront.net/corpweb/pub-xlaxiata/2019-03/xl-logo.png" alt="MyXL" />
-        </div>
-      </div>
-      <p class="desc">Klik di sini untuk memudahkan pengguna nomor XL</p>
-    </div>
+  <div class="main-content hidden">
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/XLSmart.png" alt="XLSMART" class="main-logo" />
+    </header>
 
-    <div class="app-block">
-      <div class="app-card" data-app="axisnet">
-        <div class="logo-wrapper">
-          <img src="https://d2ya09u1z2qlgr.cloudfront.net/public/storage/assets/img/brand/logo_axis_purple.svg" alt="AXISNET" />
+    <main class="app-container">
+      <div class="app-block">
+        <div class="app-card">
+          <div class="logo-wrapper">
+            <img src="https://d17e22l2uh4h4n.cloudfront.net/corpweb/pub-xlaxiata/2019-03/xl-logo.png" alt="MyXL" />
+          </div>
         </div>
+        <p class="desc">Klik di sini untuk memudahkan pengguna nomor XL</p>
       </div>
-      <p class="desc">Klik di sini untuk memudahkan pengguna nomor AXIS</p>
-    </div>
 
-    <div class="app-block">
-      <div class="app-card" data-app="mysf">
-        <div class="logo-wrapper">
-          <img src="https://www.smartfren.com/app/themes/ucms/assets/logos/logo-smartfren/sfn-logo.svg" alt="MySF" />
+      <div class="app-block">
+        <div class="app-card">
+          <div class="logo-wrapper">
+            <img src="https://d2ya09u1z2qlgr.cloudfront.net/public/storage/assets/img/brand/logo_axis_purple.svg" alt="AXISNET" />
+          </div>
         </div>
+        <p class="desc">Klik di sini untuk memudahkan pengguna nomor AXIS</p>
       </div>
-      <p class="desc">Klik di sini untuk memudahkan pengguna nomor Smartfren</p>
-    </div>
-  </main>
 
-  <script src="script.js"></script>
+      <div class="app-block">
+        <div class="app-card">
+          <div class="logo-wrapper">
+            <img src="https://www.smartfren.com/app/themes/ucms/assets/logos/logo-smartfren/sfn-logo.svg" alt="MySF" />
+          </div>
+        </div>
+        <p class="desc">Klik di sini untuk memudahkan pengguna nomor Smartfren</p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Tampilkan splash selama 2 detik, lalu munculkan konten utama
+    setTimeout(() => {
+      document.querySelector('.splash-screen').style.display = 'none';
+      document.querySelector('.main-content').classList.remove('hidden');
+    }, 2000);
+  </script>
 </body>
 </html>
