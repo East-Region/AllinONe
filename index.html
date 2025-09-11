@@ -21,7 +21,7 @@
 
     <main class="app-container">
       <div class="app-block">
-        <div class="app-card">
+        <div class="app-card" onclick="openStore('xl')">
           <div class="logo-wrapper">
             <img src="https://d17e22l2uh4h4n.cloudfront.net/corpweb/pub-xlaxiata/2019-03/xl-logo.png" alt="MyXL" />
           </div>
@@ -30,7 +30,7 @@
       </div>
 
       <div class="app-block">
-        <div class="app-card">
+        <div class="app-card" onclick="openStore('axis')">
           <div class="logo-wrapper">
             <img src="https://d2ya09u1z2qlgr.cloudfront.net/public/storage/assets/img/brand/logo_axis_purple.svg" alt="AXISNET" />
           </div>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="app-block">
-        <div class="app-card">
+        <div class="app-card" onclick="openStore('smartfren')">
           <div class="logo-wrapper">
             <img src="https://www.smartfren.com/app/themes/ucms/assets/logos/logo-smartfren/sfn-logo.svg" alt="MySF" />
           </div>
@@ -54,6 +54,25 @@
       document.querySelector('.splash-screen').style.display = 'none';
       document.querySelector('.main-content').classList.remove('hidden');
     }, 2000);
+
+    function openStore(provider) {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      let url = '';
+
+      if (/android/i.test(userAgent)) {
+        if (provider === 'xl') url = 'https://play.google.com/store/apps/details?id=com.apps.myxl';
+        if (provider === 'axis') url = 'https://play.google.com/store/apps/details?id=com.axis.mobile';
+        if (provider === 'smartfren') url = 'https://play.google.com/store/apps/details?id=com.smartfren.selfcare';
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        if (provider === 'xl') url = 'https://apps.apple.com/id/app/myxl/id1118893772';
+        if (provider === 'axis') url = 'https://apps.apple.com/id/app/axisnet/id1034966341';
+        if (provider === 'smartfren') url = 'https://apps.apple.com/id/app/mysmartfren/id1047903544';
+      } else {
+        url = 'https://xl.co.id'; // fallback untuk desktop
+      }
+
+      window.open(url, '_blank');
+    }
   </script>
 </body>
 </html>
