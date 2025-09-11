@@ -26,12 +26,37 @@ html, body {
   animation: gradientBG 12s ease infinite;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Logo dekoratif transparan */
+.floating-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 80px;
+  opacity: 0;
+  animation: fadeLoop 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.floating-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+@keyframes fadeLoop {
+  0% { opacity: 0; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0; }
 }
 
 /* Kontainer utama */
@@ -54,20 +79,13 @@ html, body {
   opacity: 0;
 }
 
-/* Delay animasi masuk per blok */
 .app-block:nth-child(1) { animation-delay: 0.2s; }
 .app-block:nth-child(2) { animation-delay: 0.4s; }
 .app-block:nth-child(3) { animation-delay: 0.6s; }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Kartu logo */
