@@ -6,7 +6,7 @@ body {
   background: linear-gradient(135deg, #004aad, #7b2ff7, #ff4ecd);
   background-size: 400% 400%;
   animation: gradientBG 12s ease infinite;
-  height: 100dvh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -23,7 +23,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: linear-gradient(135deg, #004aad, #7b2ff7, #ff4ecd);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,14 +64,14 @@ header {
 
 /* Layout konten utama */
 .app-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   padding: 16px 0;
-  height: calc(100vh - 60px);
-  overflow-y: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 /* Blok per provider */
@@ -80,13 +80,13 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUp 0.6s ease forwards;
   opacity: 0;
 }
 
-.app-block:nth-child(1) { animation-delay: 2.2s; }
-.app-block:nth-child(2) { animation-delay: 2.4s; }
-.app-block:nth-child(3) { animation-delay: 2.6s; }
+.app-block:nth-child(1) { animation-delay: 1.2s; }
+.app-block:nth-child(2) { animation-delay: 1.4s; }
+.app-block:nth-child(3) { animation-delay: 1.6s; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -96,6 +96,7 @@ header {
 /* Kartu logo */
 .app-card {
   width: 38vw;
+  max-width: 200px;
   aspect-ratio: 1 / 1;
   background: #fff;
   border-radius: 12px;
@@ -158,6 +159,7 @@ header {
 
   .app-card {
     width: 60vw;
+    max-width: 180px;
   }
 
   .desc {
@@ -173,5 +175,6 @@ header {
 @media (orientation: landscape) {
   .app-card {
     width: 30vw;
+    max-width: 160px;
   }
 }
